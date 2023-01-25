@@ -4,12 +4,15 @@ const discord_js_1 = require("discord.js");
 const inversify_1 = require("inversify");
 require("reflect-metadata");
 const bot_1 = require("./bot");
-const message_responder_1 = require("./services/message-responder");
-const ping_finder_1 = require("./services/ping-finder");
+const ping_finder_1 = require("./services/finders/ping-finder/ping-finder");
+const message_responder_1 = require("./services/message-responder/message-responder");
 const types_1 = require("./types");
 let container = new inversify_1.Container();
 container.bind(types_1.TYPES.Bot).to(bot_1.Bot).inSingletonScope();
 container.bind(types_1.TYPES.Client).toConstantValue(new discord_js_1.Client());
+container
+    .bind(types_1.TYPES.TokenMeteum)
+    .toConstantValue(process.env.TokenMeteum);
 container.bind(types_1.TYPES.Token).toConstantValue(process.env.TOKEN);
 container
     .bind(types_1.TYPES.MessageResponder)

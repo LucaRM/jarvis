@@ -15,12 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Bot = void 0;
 const discord_js_1 = require("discord.js");
 const inversify_1 = require("inversify");
-const message_responder_1 = require("./services/message-responder");
+const message_responder_1 = require("./services/message-responder/message-responder");
 const types_1 = require("./types");
 let Bot = class Bot {
-    constructor(client, token, messageResponder) {
+    constructor(client, token, tokenMeteum, messageResponder) {
         this.client = client;
         this.token = token;
+        this.tokenMeteum = tokenMeteum;
         this.messageResponder = messageResponder;
     }
     listen() {
@@ -46,8 +47,9 @@ Bot = __decorate([
     inversify_1.injectable(),
     __param(0, inversify_1.inject(types_1.TYPES.Client)),
     __param(1, inversify_1.inject(types_1.TYPES.Token)),
-    __param(2, inversify_1.inject(types_1.TYPES.MessageResponder)),
-    __metadata("design:paramtypes", [discord_js_1.Client, String, message_responder_1.MessageResponder])
+    __param(2, inversify_1.inject(types_1.TYPES.TokenMeteum)),
+    __param(3, inversify_1.inject(types_1.TYPES.MessageResponder)),
+    __metadata("design:paramtypes", [discord_js_1.Client, String, String, message_responder_1.MessageResponder])
 ], Bot);
 exports.Bot = Bot;
 //# sourceMappingURL=bot.js.map

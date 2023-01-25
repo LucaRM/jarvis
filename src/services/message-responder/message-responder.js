@@ -14,8 +14,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MessageResponder = void 0;
 const inversify_1 = require("inversify");
-const types_1 = require("../types");
-const ping_finder_1 = require("./ping-finder");
+const types_1 = require("../../types");
+const ping_finder_1 = require("../finders/ping-finder/ping-finder");
 let MessageResponder = class MessageResponder {
     constructor(pingFinder) {
         this.pingFinder = pingFinder;

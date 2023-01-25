@@ -1,7 +1,7 @@
 import {Message} from "discord.js";
 import {inject, injectable} from "inversify";
-import {TYPES} from "../types";
-import {PingFinder} from "./ping-finder";
+import {TYPES} from "../../types";
+import {PingFinder} from "../finders/ping-finder/ping-finder";
 
 @injectable()
 export class MessageResponder {
