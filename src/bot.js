@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Bot = void 0;
 const discord_js_1 = require("discord.js");
 const inversify_1 = require("inversify");
-const message_responder_1 = require("./services/message-responder/message-responder");
+const message_responder_1 = require("./services/message-responder");
 const types_1 = require("./types");
 let Bot = class Bot {
     constructor(client, token, tokenMeteum, messageResponder) {

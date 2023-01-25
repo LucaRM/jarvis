@@ -3,7 +3,8 @@ import {Container} from "inversify";
 import "reflect-metadata";
 import {Bot} from "./bot";
 import {PingFinder} from "./services/finders/ping-finder/ping-finder";
-import {MessageResponder} from "./services/message-responder/message-responder";
+import {TempRequestFinder} from "./services/finders/temp-request-finder/temp-request-finder";
+import {MessageResponder} from "./services/message-responder";
 import {TYPES} from "./types";
 
 let container = new Container();
@@ -19,5 +20,9 @@ container
   .to(MessageResponder)
   .inSingletonScope();
 container.bind<PingFinder>(TYPES.PingFinder).to(PingFinder).inSingletonScope();
+container
+  .bind<TempRequestFinder>(TYPES.TempRequestFinder)
+  .to(TempRequestFinder)
+  .inSingletonScope();
 
 export default container;

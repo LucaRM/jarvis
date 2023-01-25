@@ -6,18 +6,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PingFinder = void 0;
+exports.TempRequestFinder = void 0;
 const inversify_1 = require("inversify");
-let PingFinder = class PingFinder {
+let TempRequestFinder = class TempRequestFinder {
     constructor() {
-        this.regexp = " ping ";
+        this.regexp = [
+            "qual a temperatura?",
+            "qual a temperatura de hoje",
+            "vai fazer calor hoje?",
+            "vai fazer frio hoje?",
+        ];
     }
-    isPing(stringToSearch) {
-        return stringToSearch.toLowerCase().search(this.regexp) >= 0;
+    isTempRequest(stringToSearch) {
+        return this.regexp.indexOf(stringToSearch.toLowerCase()) !== -1;
     }
 };
-PingFinder = __decorate([
+TempRequestFinder = __decorate([
     inversify_1.injectable()
-], PingFinder);
-exports.PingFinder = PingFinder;
-//# sourceMappingURL=ping-finder.js.map
+], TempRequestFinder);
+exports.TempRequestFinder = TempRequestFinder;
+//# sourceMappingURL=temp-request-finder.js.map

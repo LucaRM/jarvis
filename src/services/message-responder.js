@@ -14,16 +14,22 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MessageResponder = void 0;
 const inversify_1 = require("inversify");
-const types_1 = require("../../types");
-const ping_finder_1 = require("../finders/ping-finder/ping-finder");
+const types_1 = require("../types");
+const ping_finder_1 = require("./finders/ping-finder/ping-finder");
+const temp_request_finder_1 = require("./finders/temp-request-finder/temp-request-finder");
 let MessageResponder = class MessageResponder {
-    constructor(pingFinder) {
+    constructor(pingFinder, tempRequestFinder) {
         this.pingFinder = pingFinder;
+        this.tempRequestFinder = tempRequestFinder;
     }
     handle(message) {
         if (this.pingFinder.isPing(message.content)) {
             //If the message is a Ping
             return message.reply("pong!");
+        }
+        if (this.tempRequestFinder.isTempRequest(message.content)) {
+            //If the message is a temperature request
+            return message.reply("Correct coding.");
         }
         return Promise.reject();
     }
@@ -31,7 +37,9 @@ let MessageResponder = class MessageResponder {
 MessageResponder = __decorate([
     inversify_1.injectable(),
     __param(0, inversify_1.inject(types_1.TYPES.PingFinder)),
-    __metadata("design:paramtypes", [ping_finder_1.PingFinder])
+    __param(1, inversify_1.inject(types_1.TYPES.TempRequestFinder)),
+    __metadata("design:paramtypes", [ping_finder_1.PingFinder,
+        temp_request_finder_1.TempRequestFinder])
 ], MessageResponder);
 exports.MessageResponder = MessageResponder;
 //# sourceMappingURL=message-responder.js.map

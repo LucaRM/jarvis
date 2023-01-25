@@ -5,4 +5,5 @@ export const TYPES = {
   TokenMeteum: Symbol("Token-Meteum"),
   MessageResponder: Symbol("MessageResponder"),
   PingFinder: Symbol("PingFinder"),
+  TempRequestFinder: Symbol("TempRequestFinder"),
 };
