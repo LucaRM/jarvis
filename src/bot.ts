@@ -7,18 +7,18 @@ import {TYPES} from "./types";
 export class Bot {
   private client: Client;
   private readonly token: string;
-  private readonly tokenMeteum: string;
+  private readonly TokenIqAir: string;
   private messageResponder: MessageResponder;
 
   constructor(
     @inject(TYPES.Client) client: Client,
     @inject(TYPES.Token) token: string,
-    @inject(TYPES.TokenMeteum) tokenMeteum: string,
+    @inject(TYPES.TokenIqAir) tokenIqAir: string,
     @inject(TYPES.MessageResponder) messageResponder: MessageResponder
   ) {
     this.client = client;
     this.token = token;
-    this.tokenMeteum = tokenMeteum;
+    this.TokenIqAir = tokenIqAir;
     this.messageResponder = messageResponder;
   }
 

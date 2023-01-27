@@ -10,14 +10,14 @@ exports.PingFinder = void 0;
 const inversify_1 = require("inversify");
 let PingFinder = class PingFinder {
     constructor() {
-        this.regexp = " ping ";
+        this.regexp = "ping";
     }
     isPing(stringToSearch) {
         return stringToSearch.toLowerCase().search(this.regexp) >= 0;
     }
 };
 PingFinder = __decorate([
-    inversify_1.injectable()
+    (0, inversify_1.injectable)()
 ], PingFinder);
 exports.PingFinder = PingFinder;
 //# sourceMappingURL=ping-finder.js.map

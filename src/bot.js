@@ -18,10 +18,10 @@ const inversify_1 = require("inversify");
 const message_responder_1 = require("./services/message-responder");
 const types_1 = require("./types");
 let Bot = class Bot {
-    constructor(client, token, tokenMeteum, messageResponder) {
+    constructor(client, token, tokenIqAir, messageResponder) {
         this.client = client;
         this.token = token;
-        this.tokenMeteum = tokenMeteum;
+        this.TokenIqAir = tokenIqAir;
         this.messageResponder = messageResponder;
     }
     listen() {
@@ -44,11 +44,11 @@ let Bot = class Bot {
     }
 };
 Bot = __decorate([
-    inversify_1.injectable(),
-    __param(0, inversify_1.inject(types_1.TYPES.Client)),
-    __param(1, inversify_1.inject(types_1.TYPES.Token)),
-    __param(2, inversify_1.inject(types_1.TYPES.TokenMeteum)),
-    __param(3, inversify_1.inject(types_1.TYPES.MessageResponder)),
+    (0, inversify_1.injectable)(),
+    __param(0, (0, inversify_1.inject)(types_1.TYPES.Client)),
+    __param(1, (0, inversify_1.inject)(types_1.TYPES.Token)),
+    __param(2, (0, inversify_1.inject)(types_1.TYPES.TokenIqAir)),
+    __param(3, (0, inversify_1.inject)(types_1.TYPES.MessageResponder)),
     __metadata("design:paramtypes", [discord_js_1.Client, String, String, message_responder_1.MessageResponder])
 ], Bot);
 exports.Bot = Bot;

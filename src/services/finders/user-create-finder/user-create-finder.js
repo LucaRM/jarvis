@@ -6,22 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TempRequestFinder = void 0;
+exports.UserCreateFinder = void 0;
 const inversify_1 = require("inversify");
-let TempRequestFinder = class TempRequestFinder {
+let UserCreateFinder = class UserCreateFinder {
     constructor() {
-        this.regexp = [
-            "vai fazer calor hoje?",
-            "vai fazer frio hoje?",
-            "temperatura de hoje",
-        ];
+        this.regexp = ["crie usuário"];
     }
-    isTempRequest(stringToSearch) {
+    isUserCreateRequest(stringToSearch) {
         return this.regexp.indexOf(stringToSearch.toLowerCase()) !== -1;
     }
 };
-TempRequestFinder = __decorate([
+UserCreateFinder = __decorate([
     (0, inversify_1.injectable)()
-], TempRequestFinder);
-exports.TempRequestFinder = TempRequestFinder;
-//# sourceMappingURL=temp-request-finder.js.map
+], UserCreateFinder);
+exports.UserCreateFinder = UserCreateFinder;
+//# sourceMappingURL=user-create-finder.js.map

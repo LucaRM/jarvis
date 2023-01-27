@@ -6,6 +6,7 @@ require("reflect-metadata");
 const bot_1 = require("./bot");
 const ping_finder_1 = require("./services/finders/ping-finder/ping-finder");
 const temp_request_finder_1 = require("./services/finders/temp-request-finder/temp-request-finder");
+const user_create_finder_1 = require("./services/finders/user-create-finder/user-create-finder");
 const message_responder_1 = require("./services/message-responder");
 const types_1 = require("./types");
 let container = new inversify_1.Container();
@@ -14,12 +15,19 @@ container.bind(types_1.TYPES.Client).toConstantValue(new discord_js_1.Client());
 container
     .bind(types_1.TYPES.TokenMeteum)
     .toConstantValue(process.env.TokenMeteum);
+container
+    .bind(types_1.TYPES.TokenIqAir)
+    .toConstantValue(process.env.TokenIqAir);
 container.bind(types_1.TYPES.Token).toConstantValue(process.env.TOKEN);
 container
     .bind(types_1.TYPES.MessageResponder)
     .to(message_responder_1.MessageResponder)
     .inSingletonScope();
 container.bind(types_1.TYPES.PingFinder).to(ping_finder_1.PingFinder).inSingletonScope();
+container
+    .bind(types_1.TYPES.UserCreateFinder)
+    .to(user_create_finder_1.UserCreateFinder)
+    .inSingletonScope();
 container
     .bind(types_1.TYPES.TempRequestFinder)
     .to(temp_request_finder_1.TempRequestFinder)

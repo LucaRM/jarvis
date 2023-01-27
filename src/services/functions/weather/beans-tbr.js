@@ -6,22 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TempRequestFinder = void 0;
+exports.TempRequestHandler = void 0;
 const inversify_1 = require("inversify");
-let TempRequestFinder = class TempRequestFinder {
-    constructor() {
-        this.regexp = [
-            "vai fazer calor hoje?",
-            "vai fazer frio hoje?",
-            "temperatura de hoje",
-        ];
-    }
-    isTempRequest(stringToSearch) {
-        return this.regexp.indexOf(stringToSearch.toLowerCase()) !== -1;
+let TempRequestHandler = class TempRequestHandler {
+    fetchTempInfo(country) {
+        return true;
     }
 };
-TempRequestFinder = __decorate([
+TempRequestHandler = __decorate([
     (0, inversify_1.injectable)()
-], TempRequestFinder);
-exports.TempRequestFinder = TempRequestFinder;
-//# sourceMappingURL=temp-request-finder.js.map
+], TempRequestHandler);
+exports.TempRequestHandler = TempRequestHandler;
+//# sourceMappingURL=beans-tbr.js.map

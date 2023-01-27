@@ -3,10 +3,9 @@ import {injectable} from "inversify";
 @injectable()
 export class TempRequestFinder {
   private regexp = [
-    "qual a temperatura?",
-    "qual a temperatura de hoje",
     "vai fazer calor hoje?",
     "vai fazer frio hoje?",
+    "temperatura de hoje",
   ];
 
   public isTempRequest(stringToSearch: string): boolean {
