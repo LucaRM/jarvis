@@ -6,18 +6,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserCreateFinder = void 0;
+exports.xxx = exports.User = void 0;
 const inversify_1 = require("inversify");
-let UserCreateFinder = class UserCreateFinder {
-    constructor() {
-        this.regexp = ["crie usuário", "crie um usuário"];
-    }
+let User = class User {
     isUserCreateRequest(stringToSearch) {
-        return this.regexp.indexOf(stringToSearch.toLowerCase()) !== -1;
+        return true;
     }
 };
-UserCreateFinder = __decorate([
+User = __decorate([
     (0, inversify_1.injectable)()
-], UserCreateFinder);
-exports.UserCreateFinder = UserCreateFinder;
-//# sourceMappingURL=user-create-finder.js.map
+], User);
+exports.User = User;
+class xxx {
+    isUserCreateRequest(stringToSearch) {
+        return true;
+    }
+}
+exports.xxx = xxx;
+// TODO receber e parsear usuário e senha para criação de conta com email e senha
+//TODO enviados por chat
+//# sourceMappingURL=create-user-handler.js.map

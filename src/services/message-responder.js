@@ -36,8 +36,8 @@ let MessageResponder = class MessageResponder {
     }
     handle(message) {
         return __awaiter(this, void 0, void 0, function* () {
-            let email = "teste@teste.com";
-            let password = "teste01";
+            let email = "lmalato@hotmail.com";
+            let password = "admin";
             if (this.pingFinder.isPing(message.content)) {
                 //If the message is a Ping
                 return message.reply("pong!");

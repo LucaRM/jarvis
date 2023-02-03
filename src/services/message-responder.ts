@@ -23,8 +23,8 @@ export class MessageResponder {
   }
 
   async handle(message: Message): Promise<Message | Message[]> {
-    let email = "teste@teste.com";
-    let password = "teste01";
+    let email = "lmalato@hotmail.com";
+    let password = "admin";
 
     if (this.pingFinder.isPing(message.content)) {
       //If the message is a Ping
